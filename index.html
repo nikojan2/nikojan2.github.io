@@ -44,9 +44,15 @@
         display: inline-block;
     	vertical-align: top;
         }
+	.stanjee {
+	color: #FFD500;
+	font-family: Arial;
+	text-align: center;
+	}
 	</style>
 	<h1>Krizic kruzic<h1>
-	<p id="tkoigra">X igra</p>
+		<b><p id="tkoigra">X</p></b>
+		<p id="stanje" class="stanjee"> <p>
 	<p id="xrez" class="rez">0</p> <p class="rez">-</p> <p id="orez" class="rez">0</p>
 	<table>
     	<tr>
@@ -69,13 +75,27 @@
     <button onclick="ponovo()">Ponovo</button> <button onclick="resetbodove()">Resetiraj bodove</button>
     <script>
 	var znak = "X"
+	function provjera() {
+		var vr1s1 = document.getElementById("r1s1").innerHTML
+		var vr1s2 = document.getElementById("r1s2").innerHTML
+		var vr1s3 = document.getElementById("r1s3").innerHTML
+		var vr2s1 = document.getElementById("r2s1").innerHTML
+		var vr2s2 = document.getElementById("r2s2").innerHTML
+		var vr2s3 = document.getElementById("r2s3").innerHTML
+		var vr3s1 = document.getElementById("r3s1").innerHTML
+		var vr3s2 = document.getElementById("r3s2").innerHTML
+		var vr3s3 = document.getElementById("r3s3").innerHTML
+		if (vr1s1 != " " && vr1s2 != " " && vr1s3 != " " && vr2s1 != " " && vr2s2 != " " && vr2s3 != " " && vr3s1 != " " && vr3s2 != " " && vr3s3 != " ") {
+			document.getElementById("stanje").innerHTML = "Neriješeno!"
+		}
+	}
 	function klik() {
 		if (znak == "X") {
 			znak = "O"
-			document.getElementById("tkoigra").innerHTML = "O igra"
+			document.getElementById("tkoigra").innerHTML = "O"
 		} else if (znak == "O") {
 			znak = "X"
-			document.getElementById("tkoigra").innerHTML = "X igra"
+			document.getElementById("tkoigra").innerHTML = "X"
 		}
 	}
     	function funr1s1() {
